@@ -1,0 +1,9 @@
+<h1>Update Your Blog</h1>
+
+<form action="{%url 'update' blog.id%}" method="post">
+    {%csrf_token%}  <!--csrf공격을 막기 위해 mathod='post'를 썼을때 꼭 작성-->
+   <p> 제목: <input type="text" name="title" value="{{blog.title}}"></p>    # 수정을 하기 위해 value를 이용해 전에 작성한 내용 표시
+   <p> 작성자: <input type="text" name="writer" value="{{blog.writer}}"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10">{{blog.body}}</textarea>
+    <button type="submit">submit</button>
+</form>

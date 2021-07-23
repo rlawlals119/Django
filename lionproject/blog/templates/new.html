@@ -1,0 +1,9 @@
+<h1>Write Your Blog</h1>
+
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%}  <!--csrf공격을 막기 위해 mathod='post'를 썼을때 꼭 작성-->
+   <p> 제목: <input type="text" name="title"></p>
+   <p> 작성자: <input type="text" name="writer"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10"></textarea>
+    <button type="submit">submit</button>
+</form>
